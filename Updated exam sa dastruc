@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+void goBack () {
+
+
+}
+
+void  menu () {
+    printf("-----GROCERY SHOP----\n\n");
+    printf("1. Add Item\n");
+    printf("2. Inventory\n");
+    printf("3. History\n");
+    printf("4. Exit\n\n");
+    printf("Input your choice: ");
+}
+
+int main (){
+menu();
+
+int choice;
+scanf(" %d", &choice);
+
+
+switch (choice)
+{
+case 1:
+{
+     printf("\n-----ITEMS-----\n\n");
+     printf("1. Carrot\n");
+     printf("2. Cabbage\n");
+     printf("3. Broccoli\n\n");
+     printf("0. Back\n");
+        
+        if (choiceT == 1) {
+        
+        int choiceTwo;
+        char itemName[40];
+        
+        scanf("Name of item: %s", &itemName);
+        scanf("Quantity: %d", &choiceTwo);
+        switch (choiceTwo)
+        {
+            case 1: 
+            {
+                printf("You selected Carrot");
+            }
+        }
+        
+        }
+
+}
+    break;
+case 2:
+{
+
+     printf("\n-----STOCK-----\n\n");
+     printf("1. Carrot x 15\n");
+     printf("2. Cabbage x 8\n");
+     printf("3. Broccoli x 11\n");
+     printf("0. Back\n");
+}
+    break;
+case 3:
+{
+     printf("\n-----HISTORY-----\n\n");
+    
+}
+    break;
+case 4:
+{ 
+     printf("\nThank you for shopping!\n");
+} 
+    break;
+} 
+
+}
