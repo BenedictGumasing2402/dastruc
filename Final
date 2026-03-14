@@ -42,6 +42,19 @@ void enqueue()
     }
 }
 
+void dequeue()
+{
+    if (front == MAX_CUSTOMERS - 1)
+    {
+        printf("The line is empty");
+    }
+    else
+    {
+        printf("Customer %s left the line", &customerQueue[front]);
+        front--;
+    }
+}
+
 void pushBasket(int basketNum)
 {
     if(top == MAX_BASKETS - 1)
@@ -98,7 +111,7 @@ case 1:
     break;
     
 case 2:
-    
+    system("clear");
     printf("Enter basket number to return: ");
     scanf("%d", &bNum);
     pushBasket(bNum);
