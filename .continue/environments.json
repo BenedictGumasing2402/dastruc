@@ -1,0 +1,7 @@
+[
+  {
+    "install": "echo 'No dependencies required - using system gcc'",
+    "start": "gcc -x c -o program Final && ./program",
+    "resourceSize": "small"
+  }
+]
