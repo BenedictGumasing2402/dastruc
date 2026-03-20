@@ -3,17 +3,12 @@
 
 #define MAX_ITEMS 50
 #define MAX_BASKETS 3
-#define MAX_CUSTOMERS 3
 
 int basketStack[MAX_BASKETS] = {30, 20, 10};
 int top = MAX_BASKETS - 1;
 
 char items[MAX_ITEMS][20];
 int itemCount = 0;
-
-char customerQueue[MAX_CUSTOMERS][20];
-int front = 0;
-int rear = 0;
 
 
 void menu () {
@@ -22,37 +17,8 @@ void menu () {
     printf("2. Return basket\n");
     printf("3. Add Item\n");
     printf("4. Inventory\n");
-    printf("5. Next Customer\n");
-    printf("6. Exit\n\n");
+    printf("5. Exit\n\n");
     printf("Input your choice: ");
-}
-
-void enqueue()
-{
-    if (rear == MAX_CUSTOMERS)
-    {
-    printf("The line is full\n");
-    }
-    else
-    {
-        printf("Enter customer name: ");
-        scanf("%s", &customerQueue[rear]);
-        printf("%s joined the queue\n", customerQueue[rear]);
-        rear++;
-    }
-}
-
-void dequeue()
-{
-    if (front == MAX_CUSTOMERS - 1)
-    {
-        printf("The line is empty");
-    }
-    else
-    {
-        printf("Customer %s left the line", &customerQueue[front]);
-        front--;
-    }
 }
 
 void pushBasket(int basketNum)
@@ -71,7 +37,7 @@ void pushBasket(int basketNum)
 void popBasket()
 {
     if (top == -1) {
-        printf("No baskets available");
+        printf("No baskets available\n");
     }
     else 
     {
@@ -84,10 +50,10 @@ void AddItem()
 {  
       system("clear");
       printf("Put Items\n");
-      scanf("%s", items);
+      scanf("%s", items[itemCount]);
+      itemCount++;
 }
 void back (){
-
  printf("1. Back\n");
     printf("input choice: ");
     int choiceTwo;
@@ -128,28 +94,20 @@ case 3:
 case 4:
      system("clear");
      printf("\n-----INVENTORY-----\n\n");
-     for (int i = 1; i > items[itemCount]; i++) {
+     for (int i = 0; i < itemCount; i++) {
      printf(" %s\n", items[i]);
+     }
      back();
-}
      break;
 
 case 5:
-    system("clear");
-    printf("\n-----CUSTOMER-----\n\n");
-    enqueue();
-    printf("\n");
-    back();
-     break;
-
-case 6:
     printf("\n-----GOODBYE-----\n");
      printf("\nThank you for shopping!\n");
      return;
      break;
 } 
 }
-}
+} 
 int main () {
 menu();
 menuChoice();
