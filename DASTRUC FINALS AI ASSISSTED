@@ -42,12 +42,12 @@ void showMenu() {
     printf("3. See the items in stock\n");
     printf("4. Buy something\n");
     printf("5. Check your basket\n");
-    printf("6. Leave shop\n\n");
-    printf("Pick an option: ");
+    printf("6. Leave the grocery\n\n");
+    printf("Choose an action: ");
 }
 
 void goBack() {
-    printf("\nBack to menu...\n");
+    printf("\nBack to menu\n");
     showMenu();
 }
 
@@ -166,8 +166,8 @@ void checkBasket() {
     }
 
     if (choice > 0 && choice <= basketCount) {
-        int idx = choice - 1;
-        Item *b = &basket[idx];
+        int itemPosition = choice - 1;
+        Item *b = &basket[itemPosition];
         for (int i = 0; i < stockCount; i++) {
             Item *p = &stock[i];
             if (strcmp(p->name, b->name) == 0) {
@@ -176,7 +176,7 @@ void checkBasket() {
         }
         printf("%s removed from basket.\n", b->name);
 
-        for (int j = idx; j < basketCount - 1; j++) {
+        for (int j = itemPosition; j < basketCount - 1; j++) {
             basket[j] = basket[j+1];
         }
         basketCount--;
