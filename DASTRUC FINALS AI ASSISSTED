@@ -24,15 +24,33 @@ void setupStock() {
     stockCount = 9;
     stock = (Item *)malloc(stockCount * sizeof(Item));
 
-    strcpy(stock[0].name, "Apple");   stock[0].price = 5.0;   stock[0].quantity = 10;
-    strcpy(stock[1].name, "Banana");  stock[1].price = 2.0;   stock[1].quantity = 20;
-    strcpy(stock[2].name, "Milk");    stock[2].price = 30.0;  stock[2].quantity = 15;
-    strcpy(stock[3].name, "Bread");   stock[3].price = 25.0;  stock[3].quantity = 12;
-    strcpy(stock[4].name, "Eggs");    stock[4].price = 6.0;   stock[4].quantity = 30;
-    strcpy(stock[5].name, "Rice");    stock[5].price = 40.0;  stock[5].quantity = 50;
-    strcpy(stock[6].name, "Chicken"); stock[6].price = 120.0; stock[6].quantity = 20;
-    strcpy(stock[7].name, "Coffee");  stock[7].price = 80.0;  stock[7].quantity = 25;
-    strcpy(stock[8].name, "Sugar");   stock[8].price = 45.0;  stock[8].quantity = 40;
+    strcpy(stock[0].name, "Apple");   
+    stock[0].price = 5.0;   
+    stock[0].quantity = 10;
+    strcpy(stock[1].name, "Banana");  
+    stock[1].price = 2.0;   
+    stock[1].quantity = 20;
+    strcpy(stock[2].name, "Milk");
+    stock[2].price = 30.0;  
+    stock[2].quantity = 15;
+    strcpy(stock[3].name, "Bread");
+    stock[3].price = 25.0;
+    stock[3].quantity = 12;
+    strcpy(stock[4].name, "Eggs");
+    stock[4].price = 6.0;
+    stock[4].quantity = 30;
+    strcpy(stock[5].name, "Rice");
+    stock[5].price = 40.0;
+    stock[5].quantity = 50;
+    strcpy(stock[6].name, "Chicken");
+    stock[6].price = 120.0;
+    stock[6].quantity = 20;
+    strcpy(stock[7].name, "Coffee");
+    stock[7].price = 80.0;
+    stock[7].quantity = 25;
+    strcpy(stock[8].name, "Sugar");
+    stock[8].price = 45.0;
+    stock[8].quantity = 40;
 }
 
 void showMenu() {
