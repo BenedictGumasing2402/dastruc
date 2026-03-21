@@ -42,13 +42,38 @@ void showMenu() {
     printf("3. See the items in stock\n");
     printf("4. Buy something\n");
     printf("5. Check your basket\n");
-    printf("6. Leave the grocery\n\n");
+    printf("6. Checkout items\n");
+    printf("7. Leave the grocery\n\n");
     printf("Choose an action: ");
 }
 
 void goBack() {
     printf("\nBack to menu\n");
     showMenu();
+}
+
+void checkOut() {
+    printf("\n=== Checkout and Receipt ===\n\n");
+    if (basketCount == 0) {
+        printf("Your basket is empty. Nothing to checkout.\n");
+        goBack();
+        return;
+    }
+
+    float grandTotal = 0.0;
+    for (int i = 0; i < basketCount; i++) {
+        Item *b = &basket[i];
+        float total = b->price * b->quantity;
+        grandTotal += total;
+        printf("%d. %s - %.2f each - %d pcs - Total: %.2f\n",
+               i+1, b->name, b->price, b->quantity, total);
+    }
+
+    printf("\nGrand Total: %.2f\n", grandTotal);
+    printf("Thank you for shopping!\n");
+
+    basketCount = 0;
+    goBack();
 }
 
 void returnBasket(int basketNum) {
@@ -213,6 +238,9 @@ void pickChoice() {
                 checkBasket();
                 break;
             case 6:
+                checkout();
+                break;
+            case 7:
                 printf("\nThanks for shopping!\n");
                 free(stock);
                 return;
